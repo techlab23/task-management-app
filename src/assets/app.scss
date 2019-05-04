@@ -1,0 +1,12 @@
+.btn-app {
+  background-color: rgb(96, 125, 139, 0.8) !important;
+  border-color: rgb(96, 125, 139, 0.8) !important;
+  color: #fff !important;
+}
+
+.btn-app:hover {
+  background-color: rgb(96, 125, 139, 1) !important;
+  border-color: rgb(96, 125, 139, 1) !important;
+}
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
