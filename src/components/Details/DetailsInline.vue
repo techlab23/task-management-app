@@ -1,42 +1,42 @@
 <template>
-  <details class="inline" ref="details" v-on:toggle="popupToggled()">
-    <summary>
-      <slot name="handle"></slot>
-    </summary>
-    <div>
-      <slot name="content">Put your contents here</slot>
-    </div>
-  </details>
+ <details class="inline" ref="details" v-on:toggle="popupToggled()">
+  <summary>
+   <slot name="handle"></slot>
+  </summary>
+  <div>
+   <slot name="content">Put your contents here</slot>
+  </div>
+ </details>
 </template>
 <script>
-  export default {
-    methods: {
-      open() {
-        this.$refs.details.setAttribute("open", '')
-      },
-      close() {
-        this.$refs.details.removeAttribute('open')
-      },
-      popupToggled() {
-        const isOpen = this.$refs.details.getAttribute('open') !== null ? true : false
-        this.$emit('popup-toggled', isOpen)
-      }
-    }
+export default {
+ methods: {
+  open() {
+   this.$refs.details.setAttribute("open", "")
+  },
+  close() {
+   this.$refs.details.removeAttribute("open")
+  },
+  popupToggled() {
+   const isOpen = this.$refs.details.getAttribute("open") !== null ? true : false
+   this.$emit("popup-toggled", isOpen)
   }
+ }
+}
 </script>
 <style scope>
-  /* Experimental : Details implementation */
-  details.popup summary {
-    outline: none;
-    cursor: pointer;
-    display: inline-block;
-  }
+/* Experimental : Details implementation */
+details.popup summary {
+ outline: none;
+ cursor: pointer;
+ display: inline-block;
+}
 
-  details.popup summary::-webkit-details-marker {
-    display: none;
-  }
+details.popup summary::-webkit-details-marker {
+ display: none;
+}
 
-  /*@keyframes fadein {
+/*@keyframes fadein {
     from {
       opacity: 0;
     }
@@ -46,7 +46,7 @@
     }
   }*/
 
-  /*details.popup div {
+/*details.popup div {
     position: fixed;
     top: 50%;
     left: 50%;
