@@ -1,12 +1,123 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Gugi");
+
+.scrolling-wrapper {
+ overflow-x: scroll;
+ overflow-y: hidden;
+ -webkit-overflow-scrolling: touch;
+}
+.scrolling-wrapper::-webkit-scrollbar {
+ display: none;
+}
+
 .btn-app {
-  background-color: rgb(96, 125, 139, 0.8) !important;
-  border-color: rgb(96, 125, 139, 0.8) !important;
-  color: #fff !important;
+ background-color: rgb(96, 125, 139, 0.8) !important;
+ border-color: rgb(96, 125, 139, 0.8) !important;
+ color: #fff !important;
+ text-decoration: none !important;
 }
 
 .btn-app:hover {
-  background-color: rgb(96, 125, 139, 1) !important;
-  border-color: rgb(96, 125, 139, 1) !important;
+ background-color: rgb(96, 125, 139, 1) !important;
+ border-color: rgb(96, 125, 139, 1) !important;
 }
 
-@import "../../node_modules/bootstrap/scss/bootstrap";
+.indicator {
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ max-width: 200px;
+}
+
+.navbar-brand {
+ font-family: "Gugi", cursive;
+ font-size: 50px;
+ font-weight: 600;
+ color: #2196f3 !important;
+ padding-top: 0px;
+ padding-bottom: 0px;
+ line-height: 1em;
+}
+
+.navbar-brand > label {
+ font-size: 20px;
+ line-height: 1em;
+ vertical-align: middle;
+ color: #a2b3bb;
+}
+
+.navbar-brand label span {
+ color: #39515d;
+}
+
+.card-body {
+ padding: 1rem !important;
+}
+
+.board-item {
+ background-color: rgb(96, 125, 139, 0.2) !important;
+ font-size: 13px;
+}
+
+.tasklist-item {
+ min-height: 50px;
+ border-bottom: 0.01rem solid rgba(0, 0, 0, 0.9);
+ font-size: 13px;
+ background-color: rgba(255, 255, 255, 0.85);
+ cursor: grab;
+}
+
+.tasklist-item:hover div.edit-icon {
+ display: block;
+}
+
+.disable-select {
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
+}
+
+/* Task List Item */
+
+.heading-text {
+ font-size: 1.4rem !important;
+}
+
+.heading {
+ padding: 15px 0 5px 0;
+ color: rgba(255, 255, 255, 0.8);
+ font-family: "Gugi", cursive;
+ border-top-left-radius: 10px;
+ border-top-right-radius: 10px;
+ text-transform: uppercase;
+ cursor: grab;
+}
+
+.cards-list {
+ min-height: 300px;
+ height: 100vh;
+ overflow: scroll;
+ box-shadow: 1px 1px 1px 0px rgba(158, 158, 158, 0.25);
+ background-color: rgba(223, 238, 242, 0.4);
+}
+
+.fixed-card {
+ cursor: pointer;
+ color: #ccc;
+ border: 1px dotted #ccc;
+ border-bottom-left-radius: 10px;
+ border-bottom-right-radius: 10px;
+}
+
+.list-column {
+ padding: 0 !important;
+ margin: 0 15px;
+}
+
+.list-width {
+ min-width: 300px;
+ max-width: 300px;
+ border-radius: 10px;
+}
