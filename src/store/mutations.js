@@ -8,13 +8,18 @@ const s4 = () =>
 const guid = () => s4() + s4() + "-" + s4() + "-" + s4() + "-" + s4() + "-" + s4() + s4() + s4()
 
 export default {
+  // Set Initial Data
   SET_INITIAL_DATA(state, payload) {
     state.boards = payload
   },
+
+  // Set Loading State
   SET_LOADING_STATE(state, payload) {
     state.isLoading = payload
   },
-  SAVE_BOARD(state, payload) {
+
+  // Save Task Board
+  SAVE_TASKBOARD(state, payload) {
     const board = state.boards.find(b => b.id == payload.id)
     const itemIdx = state.boards.findIndex(b => b.id == payload.id)
 
@@ -36,19 +41,25 @@ export default {
       state.boards.push(board)
     }
   },
-  ARCHIVE_BOARD(state, payload) {
+
+  // Archive Task Board
+  ARCHIVE_TASKBOARD(state, payload) {
     const board = state.boards.find(b => b.id == payload.boardId)
     const boardIdx = state.boards.findIndex(b => b.id == payload.boardId)
     board.archived = true
     Vue.set(state.boards, boardIdx, board)
   },
-  RESTORE_BOARD(state, payload) {
+
+  // Restore Task Board
+  RESTORE_TASKBOARD(state, payload) {
     const board = state.boards.find(b => b.id == payload.boardId)
     const boardIdx = state.boards.findIndex(b => b.id == payload.boardId)
     board.archived = false
     Vue.set(state.boards, boardIdx, board)
   },
-  SAVE_LIST(state, payload) {
+
+  // Save Task List
+  SAVE_TASKLIST(state, payload) {
     const board = state.boards.find(b => b.id == payload.boardId)
     const list = board.lists.find(l => l.id == payload.listId)
     const listIdx = board.lists.findIndex(l => l.id == payload.listId)
@@ -71,14 +82,17 @@ export default {
     }
   },
 
-  ARCHIVE_LIST(state, payload) {
+  // Archive Task List
+  ARCHIVE_TASKLIST(state, payload) {
     const board = state.boards.find(b => b.id == payload.boardId)
     const list = board.lists.find(l => l.id == payload.listId)
     const listIdx = board.lists.findIndex(l => l.id == payload.listId)
     list.archived = true
     Vue.set(board.lists, listIdx, list)
   },
-  RESTORE_LIST(state, payload) {
+
+  // Restore Task List
+  RESTORE_TASKLIST(state, payload) {
     const board = state.boards.find(b => b.id == payload.boardId)
     const list = board.lists.find(l => l.id == payload.listId)
     const listIdx = board.lists.findIndex(l => l.id == payload.listId)
@@ -86,22 +100,26 @@ export default {
     Vue.set(board.lists, listIdx, list)
   },
 
-  REORDER_BOARD_LISTS(state, payload) {
+  // Reorder TaskBoad Lists
+  REORDER_TASKLISTS(state, payload) {
     const board = state.boards.find(b => b.id == payload.boardId)
     Vue.set(board, "lists", payload.lists)
   },
 
-  REORDER_LIST_ITEMS(state, payload) {
+  // Reorder Task List Items
+  REORDER_TASKLIST_ITEMS(state, payload) {
     const board = state.boards.find(b => b.id == payload.boardId)
     const listIdx = board.lists.findIndex(l => l.id == payload.listId)
     Vue.set(board.lists[listIdx], "items", payload.items)
   },
 
-  SET_ACTIVE_BOARD(state, payload) {
+  // Set Active Board
+  SET_ACTIVE_TASKBOARD(state, payload) {
     state.activeBoard = payload.board
   },
 
-  SAVE_LIST_ITEM(state, payload) {
+  // Save Task List Item
+  SAVE_TASKLIST_ITEM(state, payload) {
     const board = state.boards.find(b => b.id == payload.boardId)
     const list = board.lists.find(l => l.id == payload.listId)
     const itemIdx = list.items.findIndex(item => item.id == payload.item.id)
@@ -117,7 +135,8 @@ export default {
     }
   },
 
-  DELETE_LIST_ITEM(state, payload) {
+  // Delete Task List Item
+  DELETE_TASKLIST_ITEM(state, payload) {
     const board = state.boards.find(b => b.id == payload.boardId)
     const list = board.lists.find(l => l.id == payload.listId)
     const itemIdx = list.items.findIndex(item => item.id == payload.item.id)

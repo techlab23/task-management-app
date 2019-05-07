@@ -19,7 +19,7 @@
             <router-link class="btn btn-sm btn-app mr-2 mb-1" :to="{ name: 'task-board', params: { id: board.id } }"
               >View</router-link
             >
-            <button class="btn btn-sm btn-danger mb-1" @click="archiveBoard({ boardId: board.id })">
+            <button class="btn btn-sm btn-danger mb-1" @click="handleArchiveTaskBoard(board)">
               Archive
             </button>
           </div>
@@ -39,7 +39,7 @@
             <p class="card-text">{{ board.description }}</p>
           </div>
           <div class="card-footer bg-transparent text-center">
-            <button class="btn btn-sm btn-success" @click="restoreBoard({ boardId: board.id })">
+            <button class="btn btn-sm btn-success" @click="handleRestoreTaskBoard(board)">
               Restore
             </button>
           </div>
@@ -65,16 +65,22 @@ export default {
   },
   methods: {
     ...mapActions({
-      setActiveBoard: "setActiveBoard",
-      archiveBoard: "archiveBoard",
-      restoreBoard: "restoreBoard"
+      setActiveTaskBoard: "setActiveTaskBoard",
+      archiveTaskBoard: "archiveTaskBoard",
+      restoreTaskBoard: "restoreTaskBoard"
     }),
     handleTaskBoardEditing(board) {
       Bus.$emit("taskboard-editing", board)
+    },
+    handleArchiveTaskBoard(board) {
+      this.archiveTaskBoard({ boardId: board.id })
+    },
+    handleRestoreTaskBoard(board) {
+      this.restoreTaskBoard({ boardId: board.id })
     }
   },
   async created() {
-    await this.setActiveBoard({
+    await this.setActiveTaskBoard({
       board: null
     })
   }

@@ -63,7 +63,7 @@ export default {
           listId: this.list.id,
           items: reorderedListItems
         }
-        this.reorderListItems(payload)
+        this.reorderTaskListItems(payload)
       }
     },
     shouldAllowTaskItemsReorder() {
@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      reorderListItems: "reorderListItems"
+      reorderTaskListItems: "reorderTaskListItems"
     }),
     itemEditing() {
       this.isEditing = true

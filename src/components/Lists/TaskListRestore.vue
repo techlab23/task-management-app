@@ -44,10 +44,10 @@ export default {
   },
   methods: {
     ...mapActions({
-      restoreList: "restoreList"
+      restoreTaskList: "restoreTaskList"
     }),
     handleTaskListRestore(list) {
-      this.restoreList({
+      this.restoreTaskList({
         boardId: this.activeBoard.id,
         listId: list.id
       })

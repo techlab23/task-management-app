@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      saveList: "saveList"
+      saveTaskList: "saveTaskList"
     }),
     handlePopupToggled(isOpen) {
       if (!isOpen) {
@@ -72,7 +72,7 @@ export default {
     handleTaskListSave() {
       this.$validator.validateAll("list-form").then(async result => {
         if (result) {
-          await this.saveList({
+          await this.saveTaskList({
             boardId: this.activeBoard.id,
             listId: this.listForm.id,
             name: this.listForm.name

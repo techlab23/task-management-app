@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container-fluid">
     <AppHeader></AppHeader>
-    <transition name="page" mode="out-in" v-if="!this.$store.getters.isLoading">
+    <transition name="page" mode="out-in" v-if="!isLoading">
       <router-view></router-view>
     </transition>
     <AppLoadingIndicator></AppLoadingIndicator>
@@ -10,6 +10,7 @@
 <script>
 import AppHeader from "@/components/AppHeader"
 import AppLoadingIndicator from "@/components/AppLoadingIndicator"
+import { mapGetters } from "vuex"
 export default {
   name: "App",
   components: {
@@ -18,6 +19,11 @@ export default {
   },
   beforeCreate() {
     this.$store.dispatch("fetchData")
+  },
+  computed: {
+    ...mapGetters({
+      isLoading: "isLoading"
+    })
   }
 }
 </script>

@@ -43,7 +43,7 @@ export default {
         return this.getBoard ? this.getBoard.lists.filter(l => !l.archived) : []
       },
       async set(value) {
-        await this.reorderBoardLists({
+        await this.reorderTaskLists({
           boardId: this.param,
           lists: value
         })
@@ -52,13 +52,13 @@ export default {
   },
   methods: {
     ...mapActions({
-      reorderBoardLists: "reorderBoardLists",
-      setActiveBoard: "setActiveBoard"
+      reorderTaskLists: "reorderTaskLists",
+      setActiveTaskBoard: "setActiveTaskBoard"
     })
   },
   created() {
     if (this.getBoard) {
-      this.setActiveBoard({
+      this.setActiveTaskBoard({
         board: this.getBoard
       })
     }

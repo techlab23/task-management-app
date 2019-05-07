@@ -66,8 +66,8 @@ export default {
 
   methods: {
     ...mapActions({
-      saveListItem: "saveListItem",
-      deleteListItem: "deleteListItem"
+      saveTaskListItem: "saveTaskListItem",
+      deleteTaskListItem: "deleteTaskListItem"
     }),
     startEditing() {
       this.form.id = this.item.id
@@ -88,7 +88,7 @@ export default {
             id: this.form.id,
             text: this.form.text
           }
-          this.saveListItem({
+          this.saveTaskListItem({
             boardId: this.board.id,
             listId: this.list.id,
             item: updatedItem
@@ -104,7 +104,7 @@ export default {
       this.$emit("item-cancelled")
     },
     remove() {
-      this.deleteListItem({
+      this.deleteTaskListItem({
         boardId: this.board.id,
         listId: this.list.id,
         item: this.item

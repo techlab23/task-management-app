@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      saveBoard: "saveBoard"
+      saveTaskBoard: "saveTaskBoard"
     }),
     handleTaskBoardEditing(board) {
       this.boardForm.id = board.id
@@ -83,7 +83,7 @@ export default {
     handleSaveBoard() {
       this.$validator.validateAll("board-form").then(result => {
         if (result) {
-          this.saveBoard({
+          this.saveTaskBoard({
             id: this.boardForm.id,
             name: this.boardForm.name,
             description: this.boardForm.description

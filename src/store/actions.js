@@ -11,39 +11,40 @@ export default {
       }, 500)
     })
   },
-  async saveBoard({ commit }, payload) {
-    commit("SAVE_BOARD", payload)
+  async saveTaskBoard({ commit }, payload) {
+    commit("SAVE_TASKBOARD", payload)
   },
-  async archiveBoard({ commit }, payload) {
-    commit("ARCHIVE_BOARD", payload)
+  async archiveTaskBoard({ commit }, payload) {
+    commit("ARCHIVE_TASKBOARD", payload)
   },
-  async restoreBoard({ commit }, payload) {
-    commit("RESTORE_BOARD", payload)
+  async restoreTaskBoard({ commit }, payload) {
+    commit("RESTORE_TASKBOARD", payload)
   },
-
-  async saveList({ commit }, payload) {
-    commit("SAVE_LIST", payload)
-  },
-  async archiveList({ commit }, payload) {
-    commit("ARCHIVE_LIST", payload)
-  },
-  async restoreList({ commit }, payload) {
-    commit("RESTORE_LIST", payload)
+  async setActiveTaskBoard({ commit }, payload) {
+    commit("SET_ACTIVE_TASKBOARD", payload)
   },
 
-  async reorderBoardLists({ commit }, payload) {
-    commit("REORDER_BOARD_LISTS", payload)
+  async saveTaskList({ commit }, payload) {
+    commit("SAVE_TASKLIST", payload)
   },
-  async reorderListItems({ commit }, payload) {
-    commit("REORDER_LIST_ITEMS", payload)
+  async archiveTaskList({ commit }, payload) {
+    commit("ARCHIVE_TASKLIST", payload)
   },
-  async setActiveBoard({ commit }, payload) {
-    commit("SET_ACTIVE_BOARD", payload)
+  async restoreTaskList({ commit }, payload) {
+    commit("RESTORE_TASKLIST", payload)
   },
-  async saveListItem({ commit }, payload) {
-    commit("SAVE_LIST_ITEM", payload)
+
+  async reorderTaskLists({ commit }, payload) {
+    commit("REORDER_TASKLISTS", payload)
   },
-  async deleteListItem({ commit }, payload) {
-    commit("DELETE_LIST_ITEM", payload)
+  async reorderTaskListItems({ commit }, payload) {
+    commit("REORDER_TASKLIST_ITEMS", payload)
+  },
+
+  async saveTaskListItem({ commit }, payload) {
+    commit("SAVE_TASKLIST_ITEM", payload)
+  },
+  async deleteTaskListItem({ commit }, payload) {
+    commit("DELETE_TASKLIST_ITEM", payload)
   }
 }

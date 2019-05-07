@@ -27,10 +27,10 @@ export default {
   },
   methods: {
     ...mapActions({
-      archiveList: "archiveList"
+      archiveTaskList: "archiveTaskList"
     }),
     handleTaskListArchive() {
-      this.archiveList({
+      this.archiveTaskList({
         boardId: this.board.id,
         listId: this.list.id
       })
