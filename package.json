@@ -8,7 +8,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "deploy": "vue-cli-service build && cd dist && surge ./ kanban-board-demo.surge.sh",
-    "deploy-dev": "vue-cli-service build && cd dist && surge ./ kanban-board-demo-2.surge.sh"
+    "deploy-staging": "vue-cli-service build && cd dist && surge ./ kanban-board-demo-staging.surge.sh"
   },
   "dependencies": {
     "axios": "^0.18.0",
