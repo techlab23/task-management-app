@@ -5,7 +5,7 @@
       <TaskListActions :board="board" :list="list"></TaskListActions>
     </div>
     <div class="cards cards-list">
-      <draggable v-model="items" :disabled="!shouldAllowTaskItemsReorder" group="kanban-board-list-items">
+      <draggable v-model="items" :disabled="isEditing || !shouldAllowTaskItemsReorder" group="kanban-board-list-items">
         <TaskListItem
           v-for="item in items"
           :item="item"

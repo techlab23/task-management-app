@@ -4,7 +4,7 @@
       <span class="nav-item btn btn-sm btn-app mr-2">+ New List</span>
     </template>
     <template v-slot:content>
-      <form data-vv-scope="list-form">
+      <form>
         <h4>{{ heading }}</h4>
         <input
           name="listName"
@@ -15,7 +15,7 @@
           data-vv-as="List Name"
           placeholder="Enter your list name"
         />
-        <small class="text-danger" style="display:block">{{ errors.first("list-form.listName") }}</small>
+        <small class="text-danger" style="display:block">{{ errors.first("listName") }}</small>
         <button class="btn btn-sm btn-app mt-2" @click.prevent="handleTaskListSave">
           Save List
         </button>
@@ -70,7 +70,7 @@ export default {
       this.$refs.newListPopup.open()
     },
     handleTaskListSave() {
-      this.$validator.validateAll("list-form").then(async result => {
+      this.$validator.validateAll().then(async result => {
         if (result) {
           await this.saveTaskList({
             boardId: this.activeBoard.id,

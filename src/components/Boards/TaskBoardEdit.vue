@@ -5,7 +5,7 @@
       <span class="nav-item btn btn-sm btn-app mr-2">+ New Board</span>
     </template>
     <template v-slot:content>
-      <form data-vv-scope="board-form">
+      <form>
         <h4>{{ heading }}</h4>
         <input
           name="boardName"
@@ -16,7 +16,7 @@
           data-vv-as="Board Name"
           placeholder="Enter your board name"
         />
-        <small class="text-danger" style="display:block">{{ errors.first("board-form.boardName") }}</small>
+        <small class="text-danger" style="display:block">{{ errors.first("boardName") }}</small>
         <textarea
           name="boardDescription"
           rows="2"
@@ -26,7 +26,7 @@
           data-vv-as="Board Description"
           placeholder="Enter your board description"
         ></textarea>
-        <small class="text-danger" style="display:block">{{ errors.first("board-form.boardDescription") }}</small>
+        <small class="text-danger" style="display:block">{{ errors.first("boardDescription") }}</small>
         <button class="btn btn-sm btn-app mt-2" @click.prevent="handleSaveBoard">
           Save Board
         </button>
@@ -81,7 +81,7 @@ export default {
       }
     },
     handleSaveBoard() {
-      this.$validator.validateAll("board-form").then(result => {
+      this.$validator.validateAll().then(result => {
         if (result) {
           this.saveTaskBoard({
             id: this.boardForm.id,

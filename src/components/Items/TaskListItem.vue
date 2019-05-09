@@ -9,7 +9,7 @@
 
   <div class="card" v-else>
     <div class="card-body">
-      <form class="form" data-vv-scope="item-form">
+      <form class="form">
         <div class="form-group">
           <textarea
             name="itemDetails"
@@ -20,7 +20,7 @@
             data-vv-as="Item Details"
             placeholder="Your item description"
           ></textarea>
-          <small class="text-danger">{{ errors.first("item-form.itemDetails") }}</small>
+          <small class="text-danger">{{ errors.first("itemDetails") }}</small>
         </div>
 
         <div :class="[isNewItem ? 'text-center' : 'd-flex justify-content-between', 'form-group']">
@@ -81,8 +81,7 @@ export default {
       this.form.text = ""
     },
     save() {
-      const scope = "item-form"
-      this.$validator.validateAll(scope).then(result => {
+      this.$validator.validateAll().then(result => {
         if (result) {
           const updatedItem = {
             id: this.form.id,
