@@ -54,14 +54,9 @@ import { Bus } from "@/utils/bus"
 export default {
   computed: {
     ...mapGetters({
-      boards: "allBoards"
-    }),
-    unarchivedBoards() {
-      return this.boards.filter(b => !b.archived)
-    },
-    archivedBoards() {
-      return this.boards.filter(b => b.archived)
-    }
+      unarchivedBoards: "unarchivedBoards",
+      archivedBoards: "archivedBoards"
+    })
   },
   methods: {
     ...mapActions({
