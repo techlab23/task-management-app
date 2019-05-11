@@ -1,12 +1,6 @@
 <template>
   <div class="scrolling-wrapper">
-    <draggable
-      v-model="lists"
-      :handle="getDragHandle"
-      :disabled="!shouldAllowListOrder"
-      group="kanban-board-lists"
-      class="row flex-nowrap mt-1"
-    >
+    <draggable v-model="lists" class="row flex-nowrap mt-1" v-bind="getDragOptions">
       <TaskList v-for="(listItem, index) in lists" :key="index" :board="getBoard" :list="listItem"></TaskList>
     </draggable>
   </div>
@@ -26,14 +20,20 @@ export default {
       boards: "allBoards",
       isLoading: "isLoading"
     }),
+    getDragOptions() {
+      return {
+        animation: "200",
+        ghostClass: "ghost",
+        handle: ".heading",
+        disabled: !this.shouldAllowListOrder,
+        group: "kanban-board-lists"
+      }
+    },
     param() {
       return this.$route.params.id
     },
     shouldAllowListOrder() {
       return this.isDesktop || this.isTablet
-    },
-    getDragHandle() {
-      return this.isMobile ? "" : ".heading"
     },
     getBoard() {
       return this.boards.find(b => b.id == this.param)

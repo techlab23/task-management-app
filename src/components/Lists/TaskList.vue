@@ -5,7 +5,7 @@
       <TaskListActions :board="board" :list="list"></TaskListActions>
     </div>
     <div class="cards cards-list">
-      <draggable v-model="items" :disabled="isEditing || !shouldAllowTaskItemsReorder" group="kanban-board-list-items">
+      <draggable v-model="items" v-bind="dragOptions">
         <TaskListItem
           v-for="item in items"
           :item="item"
@@ -51,6 +51,14 @@ export default {
       return {
         id: "",
         text: ""
+      }
+    },
+    dragOptions() {
+      return {
+        animation: "200",
+        ghostClass: "ghost",
+        group: "kanban-board-list-items",
+        disabled: this.isEditing || !this.shouldAllowTaskItemsReorder
       }
     },
     items: {

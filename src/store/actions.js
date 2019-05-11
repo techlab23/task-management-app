@@ -5,10 +5,8 @@ export default {
   async fetchData({ commit }) {
     commit("SET_LOADING_STATE", true)
     return axios.get(INITIAL_DATA_URL).then(res => {
-      window.setTimeout(() => {
-        commit("SET_INITIAL_DATA", res.data)
-        commit("SET_LOADING_STATE", false)
-      }, 500)
+      commit("SET_INITIAL_DATA", res.data)
+      commit("SET_LOADING_STATE", false)
     })
   },
   async saveTaskBoard({ commit }, payload) {
