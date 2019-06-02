@@ -1,6 +1,4 @@
 <template>
-  <!-- rgb(233, 30, 99) -->
-  <!-- #dc3545 -->
   <div class="indicator text-center" v-if="isLoading">
     <svg width="135" height="140" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" fill="#dc3545">
       <rect y="10" width="15" height="120" rx="6">
