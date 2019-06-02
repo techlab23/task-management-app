@@ -1,8 +1,11 @@
 # Task Management Application using Vue.js
 
-In [Thinking in components with vue.js](https://medium.com/@_shirish/thinking-in-components-with-vue-js-a35b5af12df), we learned about Vue component and how it can be used to create web applications. We will look at Task Management App similar to Trello built using Vue.js.
+This is the supporting github repository for [Task Management Application Using Vue.js - Part 1]()
 
 The app allows you to manage projects and tasks visually using board. One board represents one project. A board contains one or more lists. Each list represents the category of tasks, such as Todo, Doing and Done. You can drag-n-drop to change the order of lists, the order of tasks inside the list, and also move task from one list to another as well- to manage the project as it moves through different stages.
+
+If you haven't read the earlier article in this series, then here is the article link
+[**Thinking in components with vue.js**](https://medium.com/@_shirish/thinking-in-components-with-vue-js-a35b5af12df)
 
 ![Project Image](/docs/images/project.png)
 
