@@ -40,7 +40,13 @@ Allow user to,
 - rearrange the items in the list by drag and drop
 - move tasks among the lists using drag and drop
 
-**Application Demo:** [Link](http://kanban-board-demo.surge.sh)
+## Application Demo
+
+- [Surge.sh](http://kanban-board-demo.surge.sh)
+- [Netlify.com](https://task-management-app.netlify.com)
+
+One click deployment to your own Netlify account
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/techlab23/task-management-app.git)
 
 ## Build Setup
 

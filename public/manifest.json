@@ -1,6 +1,6 @@
 {
-  "name": "kanban-board",
-  "short_name": "kanban-board",
+  "name": "task-management-app",
+  "short_name": "task-app",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
