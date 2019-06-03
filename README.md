@@ -45,8 +45,9 @@ Allow user to,
 - [Surge.sh](http://kanban-board-demo.surge.sh)
 - [Netlify.com](https://task-management-app.netlify.com)
 
-One click deployment to your own Netlify account
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/techlab23/task-management-app.git)
+##### One click deployment to netlify
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/techlab23/task-management-app)
 
 ## Build Setup
 
