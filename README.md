@@ -1,6 +1,6 @@
 # Task Management Application using Vue.js
 
-This is the supporting github repository for [Task Management Application Using Vue.js - Part 1]()
+This is the supporting github repository for [Task Management Application Using Vue.js - Part 1](https://medium.com/@_shirish/task-management-application-using-vue-js-part-1-df607ca30f48)
 
 The app allows you to manage projects and tasks visually using board. One board represents one project. A board contains one or more lists. Each list represents the category of tasks, such as Todo, Doing and Done. You can drag-n-drop to change the order of lists, the order of tasks inside the list, and also move task from one list to another as well- to manage the project as it moves through different stages.
 
