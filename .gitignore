@@ -4,3 +4,4 @@ dist
 .netlify
 .DS_Store
 src/components/.DS_Store
+tests/coverage/**
