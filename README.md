@@ -1,5 +1,7 @@
 # Task Management Application using Vue.js
 
+[![Build Status](https://travis-ci.org/techlab23/task-management-app.svg?branch=master)](https://travis-ci.org/techlab23/task-management-app) [![Coverage Status](https://coveralls.io/repos/github/techlab23/task-management-app/badge.svg)](https://coveralls.io/github/techlab23/task-management-app)
+
 This is the supporting github repository for **Task Management Application** articles
 
 - [Task Management Application Using Vue.js - Part 1](https://medium.com/@_shirish/task-management-application-using-vue-js-part-1-df607ca30f48)
