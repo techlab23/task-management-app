@@ -13,7 +13,7 @@ module.exports = {
   testMatch: ["**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)"],
   testURL: "http://localhost/",
   watchPlugins: ["jest-watch-typeahead/filename", "jest-watch-typeahead/testname"],
-  collectCoverage: false,
+  collectCoverage: true,
   collectCoverageFrom: [
     "**/*.{js,vue}",
     "!**/node_modules/**",
@@ -23,6 +23,6 @@ module.exports = {
     "!**/docs/**",
     "!**/public/**"
   ],
-  coverageReporters: ["html", "text-summary"],
+  coverageReporters: ["lcov", "text-summary"],
   coverageDirectory: "<rootDir>/tests/coverage"
 }
