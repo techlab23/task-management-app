@@ -41,15 +41,13 @@ describe("TaskListEdit.vue", () => {
   })
 
   it("saveTaskList action is called on handleTaskListSave", async () => {
-    wrapper.setData({
-      listForm: {
-        id: "222-2",
-        name: "todo"
-      }
-    })
+    const listForm = {
+      id: "222-2",
+      name: "todo"
+    }
 
     wrapper.vm.$validator.validateAll = jest.fn(() => Promise.resolve(true))
-    wrapper.vm.handleTaskListEditing({ id: wrapper.vm.listForm.id, name: wrapper.vm.listForm.name })
+    wrapper.vm.handleTaskListEditing(listForm)
     wrapper.vm.handleTaskListSave()
     await flushPromises()
 
@@ -57,8 +55,8 @@ describe("TaskListEdit.vue", () => {
 
     expect($store.dispatch).toHaveBeenCalledWith("saveTaskList", {
       boardId: $store.getters.activeBoard.id,
-      listId: wrapper.vm.listForm.id,
-      name: wrapper.vm.listForm.name
+      listId: listForm.id,
+      name: listForm.name
     })
   })
 

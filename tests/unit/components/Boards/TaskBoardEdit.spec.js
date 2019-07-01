@@ -75,25 +75,23 @@ describe("TaskBoardEdit.vue", () => {
   })
 
   it("saveTaskBoard action is called on handleSaveBoard", async () => {
-    wrapper.setData({
-      boardForm: {
-        id: "222",
-        name: "tracker",
-        description: "tracker board"
-      }
-    })
+    const boardForm = {
+      id: "222",
+      name: "tracker",
+      description: "tracker board"
+    }
 
     wrapper.vm.$validator.validateAll = jest.fn(() => Promise.resolve(true))
-    wrapper.vm.handleTaskBoardEditing({ id: "222", name: "tracker", description: "tracker board" })
+    wrapper.vm.handleTaskBoardEditing(boardForm)
     wrapper.vm.handleSaveBoard()
     await flushPromises()
 
     expect(wrapper.vm.$validator.validateAll).toHaveBeenCalled()
 
     expect($store.dispatch).toHaveBeenCalledWith("saveTaskBoard", {
-      id: wrapper.vm.boardForm.id,
-      name: wrapper.vm.boardForm.name,
-      description: wrapper.vm.boardForm.description
+      id: boardForm.id,
+      name: boardForm.name,
+      description: boardForm.description
     })
   })
 })
