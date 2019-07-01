@@ -1,4 +1,4 @@
-import TaskListActions from "@/components/lists/TaskListActions.vue"
+import TaskListActions from "@/components/Lists/TaskListActions.vue"
 import { mount, createLocalVue } from "@vue/test-utils"
 import { Bus } from "@/utils/bus"
 

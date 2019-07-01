@@ -1,4 +1,4 @@
-import TaskList from "@/components/lists/TaskList.vue"
+import TaskList from "@/components/Lists/TaskList.vue"
 import { shallowMount, createLocalVue, RouterLinkStub } from "@vue/test-utils"
 import Vuex from "vuex"
 const localVue = createLocalVue()
