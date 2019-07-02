@@ -12,38 +12,28 @@ localVue.use(Vuex)
 describe("App", () => {
   let $store
   let wrapper
+  const allBoards = [
+    { id: 111, name: "kanban", description: "kanban board", archived: true, lists: [] },
+    {
+      id: 222,
+      name: "tracker",
+      description: "tracker board",
+      archived: false,
+      lists: [
+        { id: "222-1", name: "list 1", archived: false, items: [] },
+        { id: "222-2", name: "list 1", archived: false, items: [] }
+      ]
+    }
+  ]
 
   beforeEach(() => {
     $store = {
       dispatch: jest.fn(),
       getters: {
-        archivedBoards: [{ id: 111, name: "kanban", description: "kanban board", archived: true }],
-        unarchivedBoards: [
-          {
-            id: 222,
-            name: "tracker",
-            description: "tracker board",
-            archived: false,
-            lists: [
-              { id: "222-1", name: "list 1", archived: false, items: [] },
-              { id: "222-2", name: "list 1", archived: false, items: [] }
-            ]
-          }
-        ],
+        archivedBoards: [allBoards[0]],
+        unarchivedBoards: [allBoards[0]],
         isLoading: false,
-        allBoards: [
-          { id: 111, name: "kanban", description: "kanban board", archived: true, lists: [] },
-          {
-            id: 222,
-            name: "tracker",
-            description: "tracker board",
-            archived: false,
-            lists: [
-              { id: "222-1", name: "list 1", archived: false, items: [] },
-              { id: "222-2", name: "list 1", archived: false, items: [] }
-            ]
-          }
-        ]
+        allBoards: allBoards
       }
     }
   })
@@ -65,7 +55,7 @@ describe("App", () => {
       localVue,
       router,
       mocks: { $store },
-      stubs: { AppHeader: true, AppLoadingIndicator: true, Dashboard: true }
+      stubs: { AppHeader: true, AppLoadingIndicator: true }
     })
 
     router.push("/dashboard")
@@ -78,7 +68,7 @@ describe("App", () => {
       localVue,
       router,
       mocks: { $store },
-      stubs: { AppHeader: true, AppLoadingIndicator: true, TaskBoard: true }
+      stubs: { AppHeader: true, AppLoadingIndicator: true }
     })
 
     router.push("/boards/222")
