@@ -87,3 +87,17 @@ describe("Vuex Getters", () => {
     expect(received).toEqual(expected)
   })
 })
+
+test("archivdLists returns blank array if activeBoard is not set", () => {
+  let state = { activeBoard: null }
+  const received = getters.archivedLists(state)
+  const expected = []
+  expect(received).toEqual(expected)
+})
+
+test("unarchivdLists returns blank array if activeBoard is not set", () => {
+  let state = { activeBoard: null }
+  const received = getters.unarchivedLists(state)
+  const expected = []
+  expect(received).toEqual(expected)
+})

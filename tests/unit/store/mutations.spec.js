@@ -363,3 +363,28 @@ describe("DELETE_TASKLIST_ITEM", () => {
     expect(state.boards[0].lists[0].items.length).toBe(0)
   })
 })
+
+test("It does not delete invalid task list item", () => {
+  const boardId = "123"
+  const listId = "123-1"
+  const item = { id: "123-1-2", text: "Second item" }
+  let state = {
+    boards: [
+      {
+        id: "123",
+        lists: [
+          {
+            id: "123-1",
+            name: "Todo",
+            headerColor: "#607d8b",
+            archived: false,
+            items: [{ id: "123-1-1", text: "First item" }]
+          }
+        ]
+      }
+    ]
+  }
+
+  mutations.DELETE_TASKLIST_ITEM(state, { boardId, listId, item })
+  expect(state.boards[0].lists[0].items.length).toBe(1)
+})
