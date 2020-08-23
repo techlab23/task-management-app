@@ -48,7 +48,7 @@ Allow user to,
 ## Application Demo
 
 - [Surge.sh](http://kanban-board-demo.surge.sh)
-- [Netlify.com](https://task-management-app.netlify.com)
+- [Netlify.com](https://task-management-app.netlify.app)
 
 ##### One click deployment to netlify
 
